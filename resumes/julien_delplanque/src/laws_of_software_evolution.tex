@@ -14,8 +14,6 @@
 \newtheorem{definition}{Definition}
 \newtheorem{law}{S.E. law}
 
-%\newcommand{\law}[1]{#1}
-
 \title{The laws of Software Evolution: Summary}
 \author{Julien Delplanque}
 \begin{document}
@@ -126,5 +124,24 @@ systems and must be treated as such to be successfully modified or improved.
 $\leadsto$ Emphasis on feedback from team members in an organisation.
 
 \section{Applicability}
+Some Lehman's laws seem to be generally applicable to large, tailored systems
+developed by large organisation (and it is confirmed in more recent work by
+Lehman on the FEAST project). Nevertheless, it is not clear whether laws are
+applicable to: shrink-wrapped software products, systems that incorporate a
+significant number of ``off-the-shelf'' components or external libraries, small
+organisations, medium sized systems and open-source software.
+
+\section{Open Source Software}
+\textbf{Evidence appears to say that open source software does not respect the
+laws of software evolutions} (Study by Godfrey and Tu on evolution of Linux and
+follow-up study by Mens and Ramil on evolution of Eclipse).
+
+\subsection{Linux}
+Some parts of the system show continuing growth and continuing change in a
+linear way where other parts of the system (drivers) show a super-linear
+(linear on a logarithmic scale). This observation is due to the drivers.
+Generally, a new driver is created by copy-pasting another one and modifying it.
+Since drivers of Linux account for \underline{$>50\%$} of total code base,
+their growth dominates the total growth of Linux.
 
 \end{document}
