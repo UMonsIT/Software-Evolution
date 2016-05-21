@@ -1,0 +1,130 @@
+\documentclass[a4paper,11pt]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{listings}
+\usepackage{fullpage}
+
+\renewcommand{\thesection}{\arabic{section}}
+
+\newtheorem{definition}{Definition}
+\newtheorem{law}{S.E. law}
+
+%\newcommand{\law}[1]{#1}
+
+\title{The laws of Software Evolution: Summary}
+\author{Julien Delplanque}
+\begin{document}
+\maketitle
+\newpage
+
+\section{Introduction}
+After major empirical studies, Lehman and Belady proposed a number of ``laws''
+that seem to be applicable to all evolving software systems. These ``laws''
+reflect the cooperative activity of many individuals and organisational
+behaviour. Before reading these ``laws'', there are important points to
+highlight:
+\begin{itemize}
+\item These ``laws'' are not really laws, they are more sensible observations.
+\item They are applicable on large system developed by large organisation but
+less applicable in other cases.
+\end{itemize}
+
+\section{Laws of Software Evolution}
+\subsection{Continuing change}
+Before giving this law, the notion of ``E-type program'' has to be defined:
+
+\begin{definition}[E-type programs]
+E is for evolutionary, theses programs solve
+real-world problems, have their requirements and environment continuously
+evolving and have a continuous need for change.
+\end{definition}
+
+Knowing what is an ``E-type'' program, the first law is the following:
+
+\begin{law}
+An ``E-type'' program that is used in a real-world environment must be
+continually adapted, else it becomes progressively less satisfactory.
+\end{law}
+
+This law is due to the evolution of the environment increasing the mismatch
+between the system and its environment.
+
+\subsection{Increasing complexity}
+\begin{law}
+As a program is evolved, its complexity increases unless work is done to
+maintain or reduce it.
+\end{law}
+
+This is due to the fact that small changes applied in a step-wise process
+(patches) make sense locally but not globally.\\
+
+To fix this, an effort is needed to reconcile accumulated changes with the
+overall performance goals ($\leadsto$ refactoring and performance optimisation).
+
+\subsection{Self regulation}
+\begin{law}
+Program evolution is a self-regulating process. System attributes such as
+size, time between releases and the number of reported errors is approximately
+invariant for each system release.
+\end{law}
+
+\subsection{Conservation of organisational stability}
+\begin{law}
+The average effective global activity rate on an evolving system is
+invariant over the product life time.
+\end{law}
+
+This is due to managerial decisions (on effort) that are constrained by external
+forces (e.g. resources, complexity).\\
+
+In practice, the ``effective'' effort invested converges to a constant.
+
+\subsection{Conservation of familiarity}
+\begin{law}
+Over the lifetime of a system, the incremental change in each release is
+approximately constant.
+\end{law}
+
+\subsection{Continuing growth}
+\begin{law}
+Functional content of a program must be continually increased to maintain
+user satisfaction over its lifetime.
+\end{law}
+
+This law implies the first law (Continuing change), except with focus on
+functional requirements. Often, one can not afford to omit existing
+functionality. Omitted attributes will become the bottlenecks and irritants in
+usage as the user has to replace automated operations with human intervention.
+Hence, they also lead to demand for change.
+
+\subsection{Declining quality}
+\begin{law}
+E-type programs will be perceived as of declining quality unless rigorously
+maintained and adapted to a changing operational environment.
+\end{law}
+
+This law implies the first law (Continuing change), except with focus on
+observed reliability.\\
+
+This law is due to the principle of Software Uncertainty:
+\begin{definition}[Principle of Software Uncertainty]
+Real world outcome of E-type software execution is inherently uncertain with
+precise area of uncertainty also not knowable.
+\end{definition}
+
+\subsection{Feedback system}
+\begin{law}
+E-type programming process constitute multi-loop, multi-level feedback
+systems and must be treated as such to be successfully modified or improved.
+\end{law}
+
+$\leadsto$ Emphasis on feedback from team members in an organisation.
+
+\section{Applicability}
+
+\end{document}
