@@ -1,0 +1,74 @@
+\documentclass[a4paper,11pt]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{listings}
+\usepackage{fullpage}
+
+\renewcommand{\thesection}{\arabic{section}}
+
+\newtheorem{definition}{Definition}
+\newtheorem{law}{S.E. law}
+
+\title{A view on software evolution by Fred Books: Summary}
+\author{Julien Delplanque}
+\begin{document}
+\maketitle
+\newpage
+
+\section{Chapter 11: ``Plan to Throw One Away''}
+This chapter emphasises the inevitability of changes and the need to accommodate
+these changes in: the development process, the software product and the
+organisation.\\
+
+\textbf{The only constancy is change itself.}
+Programs are developed to satisfy a user's needs but this need itself, and the
+user's perception change as programs are built, tested and used. Also, due to
+the very nature of software (software are soft), they are more exposed to
+changes in requirements than other products. Nevertheless, not all user requests
+for changes in requirements need to be incorporated; a mechanism to decide which
+change request to accept is needed and the threshold for accepting changes must
+become higher as development proceeds.\\
+
+\textbf{Changes are inevitable.} They occurs in the user requirements and
+objectives, in the development strategy, in the technology used and also in the
+company structure (people come and go).\\
+
+\textbf{The system should be plan for change} and there are techniques to do it:
+using well-known programming principles such as modularisation and
+encapsulation, low coupling and high cohesion and good documentation; using good
+change control mechanisms such as a versioning system with each version having
+its own fixed shedule.\\
+
+\textbf{The organisation should be plan for change.} In a project schedule,
+change should be allowed and accommodated in a controlled way: milestones,
+deadline, and so one may be changed along the way as long as the impact of these
+changes is analysed (regular revisions of project plan whenever some task
+experiences a delay). People should be allowed to advance in their career by
+making them interchangeable as possible (to avoid project failure when one key
+person leaves). Managers and technical people should be interchangeable.
+Promotion to a higher level should take into account individual talents. The
+preceding guidelines minimise the risk that organisational changes leads to
+project failure.\\
+
+\textbf{Software that has been delivered continues to change.} This, even if no
+functionality is added. ``Maintenance'' is needed to fix bugs and repair
+defects. ``Software maintenance'' is different from ``hardware maintenance''
+because as opposed to hardware, software itself does not deteriorate but becomes
+less useful in a changing environment. Therefore, besides repairing defects, it
+is therefore essential to add functionality to keep the software ``useful''.\\
+
+\textbf{Software maintenance costs more than $40\%$ of software development
+costs} and the more users a software has, the more bugs are discovered. During
+the software usage life cycle, bugs gradually decrease, then start to increase
+again (Because users start to use full capabilities of the system?). Fixing bugs
+is likely to introduce new bugs (often, suboptimal patches are made).
+
+
+\section{Chapter 16: ``No Silver Bullet - Essence and Accident in Software Engineering''}
+
+\end{document}
