@@ -41,4 +41,48 @@ by executing programs on a real or virtual processor.
 
 Many tools also use specific visualisation techniques.
 
+\section{Static analysis tools}
+\subsection{Detecting duplicated code}
+\begin{itemize}
+\item ``CBCD: Cloned Buggy Code Detector''
+\item CCFinderX
+\item IntelliJ IDEA 13
+\item Google CodePro AnalytiX
+\end{itemize}
+
+\subsection{Code style problems and design critiques}
+\begin{itemize}
+\item CheckStyle
+\item Google CodePro AnalytiX
+\item IntelliJ IDEA 13
+\item PMD
+\end{itemize}
+
+\subsection{Code Coverage}
+Execute the code, and check if all code (classes, methods, lines) is actually
+executed. This can be used, among others to: detect obsolete or unused code,
+understand which execution scenarios use which part of the code, etc\dots
+
+\begin{itemize}
+\item IntelliJ IDEA 13
+\item Google CodePro AnalytiX
+\end{itemize}
+
+\subsection{Test Coverage}
+Execute the tests, and check if all code (classes, methods, lines) is covered by
+these tests. This can be used, among others to detect whether some parts of the
+code have not been tested. Nevertheless, \textbf{test coverage is not a
+sufficient criterion for test quality!}
+
+\begin{itemize}
+\item IntelliJ IDEA 13
+\item Coveralls
+\end{itemize}
+
+\section{Dynamic analysis tools}
+\subsection{Code Profiling}
+\begin{itemize}
+\item YourKit
+\end{itemize}
+
 \end{document}
