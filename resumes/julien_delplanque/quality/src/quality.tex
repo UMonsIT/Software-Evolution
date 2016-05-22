@@ -1,0 +1,44 @@
+\documentclass[a4paper,11pt]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{listings}
+\usepackage{fullpage}
+
+\renewcommand{\thesection}{\arabic{section}}
+
+\newtheorem{definition}{Definition}
+
+\title{Software Quality Assessment: Summary}
+\author{Julien Delplanque}
+\begin{document}
+\maketitle
+\newpage
+
+\section{Assessing the quality of a software}
+There are many types of quality problems that can be detected in automatically
+with many tools (or plugins) and techniques. These tools can be integrated into
+the IDE, integrated into the version control system, available through a
+dedicated web interface or even all the preceding possibilities combined.\\
+
+Some tools rely on \textbf{static analysis} (detecting duplicate code, detecting
+dependencies, detecting structural problems) where others rely on
+\textbf{dynamic analysis} (code coverage analysis, profiling).
+
+\begin{definition}[Static analysis]
+Static program analysis is the analysis of computer software that is performed
+without actually executing programs.
+\end{definition}
+
+\begin{definition}[Dynamic analysis]
+Dynamic program analysis is the analysis of computer software that is performed
+by executing programs on a real or virtual processor.
+\end{definition}
+
+Many tools also use specific visualisation techniques.
+
+\end{document}
