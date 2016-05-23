@@ -112,4 +112,36 @@ AIC is a test for selecting the best model for a given data set. Competing
 models may be ranked according to their AIC, with the one having the lowest AIC
 being the best.\\
 \end{definition}
+
+\section{Correlation analysis}
+The goal of correlation analysis is to find a possible relationship between two
+sets of data (e.g. a relation between the size (measured in lines of code) and
+the complexity (measured in number of conditional statements) of software
+components). To do that, statistical correlation coefficients are used (e.g.
+Pearson correlation coefficient, Spearman’s rank correlation coefficient,
+Kendall’s rank correlation coefficient, etc\dots).
+
+\begin{definition}[Pearson correlation coefficient]
+A measure of the linear (dependence) between two variables $X$ and $Y$. It
+returns a value between $-1$ and $1$ where:
+\begin{itemize}
+\item $1$ is total positive correlation
+\item $0$ is no correlation
+\item $-1$ is total negative correlation
+\end{itemize}
+\end{definition}
+
+The Pearson correlation coefficient has the following problems: it is sensitive
+to data distribution and it is not robust in presence of outliers.
+
+\begin{definition}[Spearman’s rank correlation coefficient]
+A non-parametric (does not assume any particular statistical distribution such
+as normal distribution) measure of statistical dependence between two variables.
+It assesses how well the relationship between two variables can be described
+using a monotonic function.\\
+
+If there are no repeated data values, a perfect Spearman correlation of $+1$ or
+$-1$ occurs when each of the variables is a perfect monotone function of the
+other.
+\end{definition}
 \end{document}
