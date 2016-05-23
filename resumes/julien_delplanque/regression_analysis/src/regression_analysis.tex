@@ -45,5 +45,71 @@ misleading results}. Regression analysis can be used to compute trend lines,
 that show how data changes over time.
 
 \section{Goodness of fit}
+The coefficient of determination $R^2$ provides a measure of how well future
+outcomes are likely to be predicted by the statistical model and is the
+proportion of variability in a data set that is accounted for by the statistical
+model. In regression analysis, it measures how well the regression model
+approximates the real data points. A value of 1 indicates that the regression
+model perfectly fits the data.
 
+\begin{definition}[$R^2$]
+Let $y_i$ be the observed data values,\\
+Let $f_i$ be the values modeled by the regression function,\\
+Let $Y$ be the average of all observed data values $y_i$,\\
+Let $\text{SS}_{\text{tot}} = \sum\limits_{i}{(y_i-Y)^2}$,\\
+Let $\text{SS}_{\text{err}} = \sum\limits_{i}{(y_i-f_i)^2}$,\\
+
+Then,
+\begin{center}
+$R^2 = 1 - \frac{SS_{\text{err}}}{SS_{\text{tot}}}$
+\end{center}
+\end{definition}
+
+\textbf{Attention! Only compare statistical models that are comparable!} For
+example, a model with more parameters typically leads to a better fit but this
+goodness of fit cannot be compared with regression models that use less
+parameters $\leadsto$ $R^2$ alone cannot be used as a meaningful comparison of
+models with different numbers of independent variables. Solution: adjusted
+$R^2$: $\overline{R}^2$.
+
+\begin{definition}[$\overline{R}^2$]
+Let $p$ be the number of regressors (explanatory variables excluding constant
+term) in the model and $n$ the number of data points,\\
+
+Then,
+\begin{center}
+$\overline{R}^2 = 1 - (1 - R^2)\frac{n-1}{n-p-1} = R^2 - (1 - R^2)
+\frac{p}{n-p-1}$
+\end{center}
+\end{definition}
+
+\begin{definition}[Magnitude of Relative Error]
+$\text{MRE}_i = |y_i-f_i| / |y_i|$
+\end{definition}
+
+\begin{definition}[Mean Magnitude of Relative Error]
+Average of all $\text{MRE}_i$ values.\\
+
+A value of 0 indicates that the regression line perfectly fits the data.\\
+According to Foss et al. (IEEE TSE, Nov. 2003), MMRE does not always select the
+best model among competing prediction models.
+\end{definition}
+
+\begin{definition}[MER]
+Slight variant of MRE: $\text{MER}_i = |y_i-f_i| / |f_i|$
+\end{definition}
+
+\begin{definition}[MMER]
+Average of all $\text{MER}_i$ values.\\
+
+A value of 0 indicates that the regression line perfectly fits the data.\\
+According to Foss et al. (IEEE TSE, Nov. 2003), MMER is slightly better than
+MMRE.
+\end{definition}
+
+\begin{definition}[Akaike’s Information Criterion]
+AIC is a test for selecting the best model for a given data set. Competing
+models may be ranked according to their AIC, with the one having the lowest AIC
+being the best.\\
+\end{definition}
 \end{document}
