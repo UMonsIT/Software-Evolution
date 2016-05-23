@@ -1,0 +1,49 @@
+\documentclass[a4paper,11pt]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{listings}
+\usepackage{fullpage}
+\usepackage{graphicx}
+
+\renewcommand{\thesection}{\arabic{section}}
+
+\newtheorem{definition}{Definition}
+
+\title{Analysing Software Evolution Metrics - Regression analysis: Summary}
+\author{Julien Delplanque}
+\begin{document}
+\maketitle
+\newpage
+
+\section{Regression Analysis}
+Given data points, regression analysis can be used to obtain functions that fit
+them. This technique is widely used for \textbf{prediction} or
+\textbf{forecasting} to fit a predictive model to an observed data set. Once
+the function is obtained, different measures of \textbf{goodness of fit} can be
+done (e.g. $R^2$, MMRE, MMER, etc\dots). A visualisation can then confirm the
+results of the analysis.
+
+\begin{definition}[Regression analysis]
+Any approach to modeling the relationship between one or more variables, denoted
+$y_i$, and one or more variables denoted $x_i$, such that the model depends on
+the unknown parameters to be estimated from the data.
+\end{definition}
+
+\begin{definition}[Parametric regression method]
+Finite number of unknown parameters that are estimated from the data points
+(e.g. linear regression - he regression function $f(x)=ax+b$ has 2 parameters
+$a$ and $b$).
+\end{definition}
+
+Regression methods must be used with caution as \underline{they can easily give
+misleading results}. Regression analysis can be used to compute trend lines,
+that show how data changes over time.
+
+\section{Goodness of fit}
+
+\end{document}
