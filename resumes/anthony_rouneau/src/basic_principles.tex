@@ -75,7 +75,7 @@
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.2]{figures/%
-		reengineering}
+			reengineering}
 		\caption{Re-engineering}%
 		\label{fig:reengineering}
 	\end{figure}\noindent
@@ -282,7 +282,9 @@
 			system or component after delivery 
 			to correct faults, improve 
 			performance or other attributes, 
-			or adapt to a changed environment
+			or adapt to a changed environment. 
+			Maintenance costs exceed development 
+			costs with at least a factor 2
 	\end{definition}
 	%
 	\begin{definition}
@@ -424,7 +426,8 @@
 				software or improve it after delivery\\
 				\alinea\alinea\alinea
 				\alinea
-				\alinea$\Longrightarrow$ \textit{main reason}
+				\alinea$\Longrightarrow$ \textit{main
+					reason}
 			\item \textbf{Preventive} --
 				Correct latent faults before they
 				become effective ones.
@@ -491,6 +494,340 @@
 			\item \textbf{Type 3} -- Same code 
 				modulo some changes/additions.
 		\end{itemize}
+	%
+	\subsection{Bad Smells}
+		\begin{definition}
+			\textbf{Bad Smells} -- 
+				Structures in the code that suggest
+				(sometimes scream for) the
+				possibility of refactoring.
+		\end{definition}
+		%
+		\begin{definition}
+			\textbf{Anti-Pattern} -- 
+				Identifies common mistakes and how 
+				these mistakes
+				can be overcome in refactored solutions.
+		\end{definition}\noindent
+		
+		\paragraph{Anti-Pattern example} 
+			\textbf{The Blob} or
+			\textbf{God Class}.\\~\\
+		$\times$ General form:
+		\begin{itemize}
+			\setlength{\itemsep}{0pt}
+			\setlength{\parskip}{0pt}
+			\setlength{\parsep}{0pt}
+			\item \textit{Designs where one class
+				monopolizes the processing,\\ and other
+				classes primarily encapsulate data.}
+			\item Key problem is: majority of
+				responsibilities are allocated to a 
+				single class.
+			\item In general it is a procedural design
+				$\longrightarrow$ conflicts with OO
+				paradigm.
+		\end{itemize}
+		$\times$ Refactored Solution:
+		\begin{itemize}
+			\setlength{\itemsep}{0pt}
+			\setlength{\parskip}{0pt}
+			\setlength{\parsep}{0pt}
+			\item Identify or categorize related 
+				attributes and operations.
+			\item Look for ‘natural homes’ for these
+				collections of functionality.
+			\item Apply OO Design techniques
+				e.g., inheritance, ...
+		\end{itemize}
+		%
+		\paragraph{Bad smells examples}
+		\begin{itemize}
+			\setlength{\itemsep}{0pt}
+			\setlength{\parskip}{0pt}
+			\setlength{\parsep}{0pt}
+			\item \textbf{Long method} --
+				Method that is too long $\rightarrow$
+				difficult to understand, change 
+				or extend.
+			\item \textbf{Large class} -- 
+				Class that is trying to do too much
+				$\rightarrow$ too many instance
+				variables/methods.
+			\item \textbf{Long parameter list} --
+				Too long method parameter list 
+				$\rightarrow$
+				difficult to understand.
+			\item \textbf{Feature envy} --
+				Method interested more in other
+				class(es) $\rightarrow$ should 
+				moved.
+			\item \textbf{Inappropriate intimacy} --
+				Two classes are too tightly coupled 
+				with each other.
+			\item \textbf{Lazy class} --
+				Class that is not doing enough.
+			\item \textbf{Data class}
+				Class that contains data but almost 
+				no behaviour.
+			\item \textbf{Duplicate code} --
+				Redundant code, i.e., code that 
+				appears more than once.
+			\item \textbf{Comments}
+				Comments are misused to compensate 
+				for poorly structured code.
+		\end{itemize}
+		%
+		These bad smells can be detected using 
+			metrics:
+		\begin{itemize}
+			\setlength{\itemsep}{0pt}
+			\setlength{\parskip}{0pt}
+			\setlength{\parsep}{0pt}
+			\item \textbf{Long method}
+				use a combination of LOC 
+				(lines of code) and CC (Cyclomatic
+				Complexity).
+			\item \textbf{Long parameter lists}
+				count number of method paramters.
+			\item \textbf{Large class}
+				count number of variables and 
+				methods.
+			\item \textbf{Feature envy}
+				use coupling metrics.
+			\item \textbf{Inappropriate intimacy}
+				use coupling metrics.
+		\end{itemize}
+		%
+	%
+	\subsection{Refactoring}
+		\begin{definition}
+			\textbf{Refactoring} -- 
+				A change to the system that leaves its
+				behaviour unchanged, but enhances some 
+				non-functional quality (simplicity,
+				flexibility, understandability, ...).
+		\end{definition}
+		\paragraph{Refactorin methods example}
+			\begin{itemize}
+				\setlength{\itemsep}{0pt}
+				\setlength{\parskip}{0pt}
+				\setlength{\parsep}{0pt}
+				\item \textbf{Using a loop} instead of
+					declaring all the statements.
+				\item \textbf{Encapsulate public field}
+					with getters and/or setters.
+				\item \textbf{Extract behaviour} into
+					another method or class.
+				\item \textbf{Extract class/method/%
+					subclass}.
+				\item \textbf{Move method} into another
+					class.
+			\end{itemize}
+			%
+		%
+		\paragraph{Refactor categories}
+			\begin{itemize}
+				\setlength{\itemsep}{0pt}
+				\setlength{\parskip}{0pt}
+				\setlength{\parsep}{0pt}
+				\item \textbf{Creating template methods}
+					\begin{itemize}
+						\setlength{\itemsep}{0pt}
+						\setlength{\parskip}{0pt}
+						\setlength{\parsep}{0pt}
+						\item Cut methods in smaller 
+							pieces to separate the
+							common behaviour from
+							specialised one.
+							$\rightarrow$ 
+							Use inheritance mechanism
+							to redefine methods.
+						 \item Can be used to improve
+						 	reuse, to remove duplicated
+						 	code, …
+					\end{itemize}
+				\item \textbf{Optimising class 
+					hierarchies}
+					\begin{itemize}
+						\setlength{\itemsep}{0pt}
+						\setlength{\parskip}{0pt}
+						\setlength{\parsep}{0pt}
+						\item Insert or remove classes 
+							in a hierarchy and
+							redistribute functionality 
+							over these classes.
+						\item Can be used to increase
+							cohesion, simplify
+							interfaces, remove duplicated
+							code.
+					\end{itemize}
+				\item \textbf{Incorporating composition
+					relationships}
+					\begin{itemize}
+						\setlength{\itemsep}{0pt}
+						\setlength{\parskip}{0pt}
+						\setlength{\parsep}{0pt}
+						\item Convert inheritance into
+						aggregation when inheritance is
+						overused or incorrectly used.
+					\end{itemize}
+			\end{itemize}
+			%
+		%
+		\newpage
+		%
+		\paragraph{Size of refactors}
+			\begin{itemize}
+				\setlength{\itemsep}{0pt}
+				\setlength{\parskip}{0pt}
+				\setlength{\parsep}{0pt}
+				\item \textbf{Small}
+					\begin{itemize}
+						\setlength{\itemsep}{0pt}
+						\setlength{\parskip}{0pt}
+						\setlength{\parsep}{0pt}
+						\item Short time to proceed.
+						\item Instant satisfaction.
+					\end{itemize}
+				\item \textbf{Big}
+					\begin{itemize}
+						\setlength{\itemsep}{0pt}
+						\setlength{\parskip}{0pt}
+						\setlength{\parsep}{0pt}
+						\item Long time ($\sim$ 1 month).
+						\item Agreement with the team
+							needed.
+						\item No instant satisfaction and
+							no visible progress.
+					\end{itemize}
+			\end{itemize}
+			%
+		%
+		\paragraph{Utility of refactoring}
+			Apart from making the code simpler and 
+				have better quality metrics, 
+				refactoring can be used to generate
+				\textbf{change metrics.} The structures of
+				the well-known refactors can be detected
+				between two version of a software.
+				Nonetheless, Refactoing can lead to 
+				\textbf{conflicts} when applied to
+				frameworks used in some little software.
+				Those software must change along with
+				the framework, which is not easy.
+			%
+		%
+		\paragraph{Model refactoring}
+			Refactors can be applied to diagrams (UML, ...)
+			\begin{definition}
+				\textbf{Model Driven Engineering} --
+					Develop application using models
+					only. Everything can be considered
+					as model (source code, syntax, ...).
+					Implies a higher level of abstraction
+					and allows anybody that know the
+					syntax of the model to understand 
+					the software.					
+			\end{definition}\noindent
+			Multiple refactors can be applied to UML
+				diagrams:
+			\begin{itemize}
+				\setlength{\itemsep}{0pt}
+				\setlength{\parskip}{0pt}
+				\setlength{\parsep}{0pt}
+				\item \textbf{Class diagrams} -- 
+					Similar to method and class
+					classic refactors, move methods,
+					push up, pull down, ...
+				\item \textbf{State machines} -- 
+					Merge states, split states,
+					create composite state,
+					flatten states, ...
+				\item \textbf{Activity diagrams} --
+					Paralleling independent activities,
+					concurrent state serialisation.
+			\end{itemize}
+		%
+	%
+%
+\section{Product Line Engineering}
+	\begin{definition}
+		\textbf{Software Product Line} -- 
+			Set of software-intensive systems sharing 
+			a common, managed set of features that
+			satisfy the specific needs of a particular
+			market segment or
+			mission and that are developed from a common
+			set of core assets in a prescribed way.
+	\end{definition}
+	%
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.65]{figures/%
+			product_line_1.png}
+		\caption{Feature diagram}
+		\label{fig:feature_diagram:1}
+	\end{figure}\noindent
+	%
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.65]{figures/%
+			product_line_2.png}
+		\caption{Feature diagram}
+	\end{figure}\noindent
+	%
+	\begin{itemize}
+		\setlength{\itemsep}{0pt}
+		\setlength{\parskip}{0pt}
+		\setlength{\parsep}{0pt}
+		\item \textbf{Commonality} -- 
+			List of the features that appear in all
+			products.
+		\item \textbf{Variability} -- 
+			List of the features that appear not
+			in all products.
+		\item \textbf{Dead feature} --
+			Feature present in the diagram that
+			appears in no product.
+	\end{itemize}
+	%
+%
+\section{Data extraction}\noindent
+	One could want to extract data from numerous database
+		concerning an Open Source project. The main
+		challenges to do so are:
+	%
+	\begin{itemize}
+		\setlength{\itemsep}{0pt}		
+		\setlength{\parskip}{0pt}		
+		\setlength{\parsep}{0pt}	
+		\item \textbf{Identity Merging} -- 
+			A single contributor can have his name/nickname
+			spelled different ways for different sites
+			(inverse first and last name, "accent" missing,
+			punctuation, middle names, nickname for a 
+			specific project, ...). One solution
+			is to compute the distance between two
+			names (Levenstein distance for Strings)
+			and merge the similar names. Manual 
+			post-process is	necessary.
+		\item \textbf{Workload analysis} --
+			It may be useful to analyse the main
+			topic on which each contributor has 
+			worked. The commits on the git repository
+			are analysed after the files of the project
+			have been labelled with their respective topic.
+			The $\overset{\sim}{T}$	procedure allows to
+			identify the main topic and the secondary
+			topics of the project.
+		\item \textbf{Community analysis} -- 
+			If the developers focus on a single task,
+			it is likely that the project (large) is
+			heterogeneous, because a large project requires
+			a lot of different qualification to release
+			(graphical, literal, code dev, ...).
+	\end{itemize}
 	%
 %
 \end{document}
