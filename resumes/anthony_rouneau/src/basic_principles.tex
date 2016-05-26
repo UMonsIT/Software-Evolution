@@ -193,24 +193,12 @@
 			\caption{Evolutionary process}
 		\end{figure}\noindent
 		%
-		\begin{minipage}{0.5\textwidth}
-			\begin{figure}[H]
-				\hspace*{-1cm}
-				\includegraphics[scale=0.7]{figures/%
-					evolution_spiral.png}
-				\caption{Evolution spiral model}
-			\end{figure}\noindent
-		\end{minipage}\hfill
-		\begin{minipage}{0.475\textwidth}
-			\vspace*{1cm}
-			\begin{figure}[H]
-				\centering
-				\includegraphics[scale=0.575]{figures/%
-					evolution_staged_life.png}
-				\caption{Evolution staged life model}
-			\end{figure}\noindent
-		\end{minipage}
-		%
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.4]{figures/%
+				mini_change.PNG}
+			\caption{Evolution mini-cycle model}
+		\end{figure}\noindent
 	%
 	\subsection{Software configuration management}
 		\noindent
@@ -761,6 +749,45 @@
 			mission and that are developed from a common
 			set of core assets in a prescribed way.
 	\end{definition}
+	A (Software) Product Line is a Product Family that 
+	is engineered in a planned and systematic way so as 
+	to maximise reuse.
+	This can be divided into two development activities.
+	\begin{enumerate}
+		\setlength{\itemsep}{0pt}		
+		\setlength{\parskip}{0pt}		
+		\setlength{\parsep}{0pt}	
+		\item \textbf{Domain engineering} -- 
+			\textit{Development for reuse.} (model
+			development with max common features).
+		\item \textbf{Application engineering} --
+			\textit{Development with reuse.} (using 
+			models, frameworks to develop something
+			new).
+	\end{enumerate}
+	The main challenges in Product line engineering
+	are :
+	\begin{enumerate}
+		\setlength{\itemsep}{0pt}		
+		\setlength{\parskip}{0pt}		
+		\setlength{\parsep}{0pt}	
+		\item \textbf{Adoption} --
+			\textit{The product family must cover enough
+			products so it is viable to engineer
+			model with common features.} It is useless
+			to spend time and money in establishing 
+			a general model for a family of 3 products.
+		\item \textbf{Fitness-for-purpose} --
+			\textit{Some business case and requirements
+			are sometimes too precise and hard to model,
+			and it would cost too much as requirements
+			engineering is already the most difficult
+			task in single system development.}
+		\item \textbf{Variability management} --
+			\textit{Establish which features are
+			common/optional and deal with feature
+			interaction.}
+	\end{enumerate}
 	%
 	\begin{figure}[H]
 		\centering
